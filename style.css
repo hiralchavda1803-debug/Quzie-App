@@ -1,0 +1,130 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,Helvetica,sans-serif;
+}
+
+.wrapper
+{
+height:100vh;
+background:linear-gradient(to right,#764BA2,#2D2B55);
+position: relative;
+
+}
+
+h1
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    color: white;
+}
+
+.timer
+{
+    background-color: #FF5E5E;
+    color: #FFFFFF;
+    width: 150px;
+    padding: 10px;
+    font-size: 40px;
+    font-weight: bold;
+    position: absolute;
+    left: 50rem;
+    top: 100px;
+    
+}
+
+h2
+{
+    margin-top: 20px;
+    
+}
+.question
+{
+    background-color:#2D2B55;
+    color: #EEEEEE;
+    width: 750px;
+    height: 450px;
+    border:none;
+    padding:30px;
+    font-size:25px;
+    border-radius:12px;
+    cursor:pointer;
+    position: absolute;
+    left: 34rem;
+    top: 200px;
+    line-height: 45px;
+}
+
+body
+{
+    background-color: cornflowerblue;
+}
+.option aside
+{
+    border: 1px solid transparent;
+
+}
+
+.option aside:hover
+{
+    background-color:#F7F6FF;
+    border: 2px solid #A29BFE;
+    color:#444444;
+    cursor: pointer;
+    border-radius: 7px;
+}
+
+form
+{
+    display:flex;
+    margin-top: 40rem;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.buttons button
+{
+    padding:18px;
+    border:none;
+    border-radius:10px;
+    font-size:18px;
+    margin: 15px;
+
+}
+
+.Btn
+{
+    background-color: #EEEEEE;
+    color: #444444;
+    cursor: pointer;
+}
+
+.submitBtn
+{
+    background-color: #2ECC71;
+    cursor: pointer;
+}
+
+.no-cursor
+{
+    cursor: not-allowed;
+}
+
+h3
+{
+   text-align: center;
+   background-color:black;
+   color: #FFFFFF;
+   width: 200px;
+   padding: 30px;
+   font-size: 30px;
+   position: relative;
+   left: 50rem;
+   top: 25rem;
+   border-radius: 15px;
+   cursor: pointer;
+}
