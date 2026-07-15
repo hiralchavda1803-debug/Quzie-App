@@ -7,31 +7,47 @@ Quiz Application built using **HTML**, **CSS**, and **JavaScript**. The app allo
 ## 🛠️ Technologies Used
 
 - HTML5
+
 - CSS3
+
 - JavaScript
 
 
 
-🚀 Features
+## 🚀 Features
 
 ✅ Multiple Choice Questions
+
 ⏱️ Countdown Timer
+
 ⬅️ Previous Button
+
 ➡️ Next Button
+
 📤 Submit Quiz
+
 🏆 Final Score Screen
+
 🔄 Restart Quiz
 
 
 
-📂 Project Structure
+## 📂 Project Structure
 
 📁Quiz App
+
 index.html
+
 style.css
+
 script.js
+
 image
+
 README.md
+ 
 
+## 📸 Screenshot
 
-📸 Screenshot
+![image1](images/SS%20image1.png)
+![image2](images/SS%20image2.png)
