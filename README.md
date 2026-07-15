@@ -49,5 +49,5 @@ README.md
 
 ## 📸 Screenshot
 
-![image1](images/SS%20image1.png)
-![image2](images/SS%20image2.png)
+![image1](images/ssimg1.png)
+![image2](images/ssimg2.png)
