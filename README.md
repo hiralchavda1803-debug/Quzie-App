@@ -53,7 +53,7 @@ README.md
  
 
 
-## 📊 Result Screen
+## 📱 Result Screen
 
 - 📚 Total Questions
 
