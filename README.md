@@ -1,16 +1,15 @@
 # Quzie-App🎯
 
-
 Quiz Application built using **HTML**, **CSS**, and **JavaScript**. The app allows users to answer multiple-choice questions, navigate between questions, view their final score, and restart the quiz.
 
 
 ## 🛠️ Technologies Used
 
-- HTML5
+- 🌐 HTML
 
-- CSS3
+- 🎨 CSS
 
-- JavaScript
+-  ⚡ JavaScript
 
 
 
@@ -23,6 +22,12 @@ Quiz Application built using **HTML**, **CSS**, and **JavaScript**. The app allo
 ⬅️ Previous Button
 
 ➡️ Next Button
+
+⏳ 1 Minute Timer for each question
+
+🎉 Pass / ❌ Fail Status
+
+📊 Percentage  Calculation
 
 📤 Submit Quiz
 
@@ -46,6 +51,20 @@ image
 
 README.md
  
+
+
+## 📊 Result Screen
+
+- 📚 Total Questions
+
+- ✅ Correct Answers
+
+- ❌ Wrong Answers
+
+- 📊 Percentage
+
+- 🎉 PASS / ❌ FAIL Status
+
 
 ## 📸 Screenshot
 

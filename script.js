@@ -1,6 +1,6 @@
 const quizQuestions = [
     {
-        question: "What is JavaScript?",
+        question: "1.What is JavaScript?",
         options: [
             "Programming Language",
             "Database",
@@ -10,7 +10,7 @@ const quizQuestions = [
         answer: "Programming Language"
     },
     {
-        question: "Which keyword is used to declare a variable in JavaScript?",
+        question: "2.Which keyword is used to declare a variable in JavaScript?",
         options: [
             "let",
             "print",
@@ -20,7 +20,7 @@ const quizQuestions = [
         answer: "let"
     },
     {
-        question: "Which company developed JavaScript?",
+        question: "3.Which company developed JavaScript?",
         options: [
             "Microsoft",
             "Netscape",
@@ -30,7 +30,7 @@ const quizQuestions = [
         answer: "Netscape"
     },
     {
-        question: "Which symbol is used for single-line comments in JavaScript?",
+        question: "4.Which symbol is used for single-line comments in JavaScript?",
         options: [
             "//",
             "/* */",
@@ -40,7 +40,7 @@ const quizQuestions = [
         answer: "//"
     },
     {
-        question: "Which method is used to display a message in the browser?",
+        question: "5.Which method is used to display a message in the browser?",
         options: [
             "alert()",
             "print()",
@@ -50,7 +50,7 @@ const quizQuestions = [
         answer: "alert()"
     },
     {
-        question: "Which operator is used for strict equality?",
+        question: "6.Which operator is used for strict equality?",
         options: [
             "===",
             "==",
@@ -60,7 +60,7 @@ const quizQuestions = [
         answer: "==="
     },
     {
-        question: "Which loop is guaranteed to execute at least once?",
+        question: "7.Which loop is guaranteed to execute at least once?",
         options: [
             "do...while",
             "while",
@@ -70,7 +70,7 @@ const quizQuestions = [
         answer: "do...while"
     },
     {
-        question: "Which method adds an element to the end of an array?",
+        question: "8.Which method adds an element to the end of an array?",
         options: [
             "push()",
             "pop()",
@@ -80,7 +80,7 @@ const quizQuestions = [
         answer: "push()"
     },
     {
-        question: "Which function converts a string to an integer?",
+        question: "9.Which function converts a string to an integer?",
         options: [
             "parseInt()",
             "toString()",
@@ -90,7 +90,7 @@ const quizQuestions = [
         answer: "parseInt()"
     },
     {
-        question: "Which event occurs when a button is clicked?",
+        question: "10.Which event occurs when a button is clicked?",
         options: [
             "click",
             "mouseover",
@@ -105,7 +105,8 @@ const quizQuestions = [
 var index = 0;
 
 document.querySelector('.wrapper').style.display = "none";
-document.querySelector('h3').onclick = function () {
+document.querySelector('h3').onclick = function () 
+{
     document.querySelector('.wrapper').style.display = "block";
     document.querySelector('h3').style.display = "none";
     Quiz(index);
@@ -115,92 +116,190 @@ document.querySelector('h3').onclick = function () {
 var id;
 var second;
 let score = 0;
+var flag = false;
+var tempQuation = 0;
+var Skip = [];
 
-function Timer(t1, t2) {
-    setTimeout(() => {
+function Timer(t1, t2) 
+{
+    setTimeout(() => 
+    {
         document.querySelectorAll('.timer span')[0].innerHTML = "00";
         second = document.querySelectorAll('.timer span')[1].innerText = "59";
     }, t1)
 
-    id = setInterval(() => {
-        document.querySelectorAll('.timer span')[1].innerText = second--;
+    id = setInterval(() => 
+    {
+        if (second == 0)
+        {
+            clearInterval(id);
+            index++;
+            Quiz(index);
+
+        }
+        document.querySelectorAll('.timer span')[1].innerText = `${second--}`;
     }, t2)
 }
 
 
-function Quiz(index) {
+function Quiz(index) 
+{
+    document.querySelectorAll('.timer span')[0].innerHTML = "01";
+    document.querySelectorAll('.timer span')[1].innerHTML = "00";
 
-    if (index != 0) {
-        document.querySelector('.pre').classList.remove("no-cursor")
-        document.querySelector('.pre').disabled = false;
-        Timer(1000, 1000);
+    if (index >= quizQuestions.length) 
+    {
+        document.querySelector('.submitBtn').style.display = "none";
+        return;
     }
+    document.querySelector('.submitBtn').style.display = "block";
 
-
-    if (index == 9) {
-        document.querySelector('.next').classList.add("no-cursor");
-        document.querySelector('.next').disabled = true;
-    }
-
-
-    if (index == 0) {
+    if (index == 0) 
+    {
         document.querySelector('.pre').classList.add("no-cursor");
         document.querySelector('.pre').disabled = true;
         Timer(1000, 1000);
 
     }
 
+    else if (index == 9) 
+    {
+        document.querySelector('.next').classList.add("no-cursor");
+        document.querySelector('.next').disabled = true;
+    }
 
-    if (index != 9) {
+    else 
+    {
+        document.querySelector('.pre').classList.remove("no-cursor")
+        document.querySelector('.pre').disabled = false;
         document.querySelector('.next').classList.remove("no-cursor")
         document.querySelector('.next').disabled = false;
+        Timer(1000, 1000);
     }
+
+
 
 
     document.querySelector('.question').innerHTML = `
     <div class="">
         <h2>${quizQuestions[index].question}</h2><br>
             <div class="option">
-                <aside><input name="R" form = "Myform" value = "${quizQuestions[index].options[0]}" type="radio" id = "id1"><label>  ${quizQuestions[index].options[0]} </label></aside>
-                <aside><input name="R" form = "Myform" value = "${quizQuestions[index].options[0]}" type="radio"  id = "id1"><label> ${quizQuestions[index].options[1]} </label></aside>
-                <aside><input name="R" form = "Myform" value = "${quizQuestions[index].options[0]}" type="radio" id = "id1"><label>  ${quizQuestions[index].options[2]} </label></aside>
-                <aside><input name="R" form = "Myform" value = "${quizQuestions[index].options[0]}" type="radio"  id = "id1"><label> ${quizQuestions[index].options[3]} </label></aside>
+                <aside> <input name="R" form = "Myform" value = "${quizQuestions[index].options[0]}" type="radio" id = "id1"><label>  ${quizQuestions[index].options[0]} </label></aside>
+                <aside> <input name="R" form = "Myform" value = "${quizQuestions[index].options[0]}" type="radio"  id = "id1"><label> ${quizQuestions[index].options[1]} </label></aside>
+                <aside> <input name="R" form = "Myform" value = "${quizQuestions[index].options[0]}" type="radio" id = "id1"><label>  ${quizQuestions[index].options[2]} </label></aside>
+                <aside> <input name="R" form = "Myform" value = "${quizQuestions[index].options[0]}" type="radio"  id = "id1"><label> ${quizQuestions[index].options[3]} </label></aside>
             </div>
         </div>`
 }
 
 
-document.querySelector('.next').onclick = function (e) {
-    clearInterval(id);
-    Quiz(++index);
+document.querySelector('.next').onclick = function (e) 
+{
     e.preventDefault();
+    clearInterval(id);
+    Skip.push(index);
+    Quiz(++index);
 }
 
 
 document.querySelector('.pre').onclick = function (e) 
 {
     e.preventDefault();
+    clearInterval(id);
     Quiz(--index);
 
 }
 
+function Result()
+{
+    document.querySelector('.wrapper').style.display = "none";
+    document.querySelector('.result').style.display = "block";
+    document.querySelector('.result').innerHTML = score;
 
-document.querySelector('form').onsubmit = function(e)
+
+
+    let total = quizQuestions.length;
+    let correct = score;
+    let wrong = total - correct;
+    let percentage = ((correct / total) * 100).toFixed(0);
+
+    let status = percentage >= 50 ? "🎉 PASS" : "❌ FAIL";
+
+    document.querySelector(".result").style.display = "block";
+
+    document.querySelector(".result").innerHTML = `
+        <h1>Quiz Result</h1>
+
+        <p>📚 Total Questions : <b>${total}</b></p>
+
+        <p>✅ Correct Answers : <b>${correct}</b></p>
+
+        <p>❌ Wrong Answers : <b>${wrong}</b></p>
+
+        <p>📊 Percentage : <b>${percentage}%</b></p>
+
+        <p style="font-size:28px;color:${percentage>=50?'#2ecc71':'#ff5e5e'}">
+            ${status}
+        </p>
+
+        <button onclick="location.reload()">Restart Quiz</button>`;
+        
+}
+
+
+document.querySelector('form').onsubmit = function (e) 
 {
     e.preventDefault();
+    clearInterval(id);
 
-    for (let i = 0; i < quizQuestions[i].options.length; i++) 
+    for (let i = 0; i < quizQuestions[index].options.length; i++) 
     {
-       if (e.target[i].checked) 
-       {
+        if (e.target[i].checked) 
+        {
             if (e.target[i].value == quizQuestions[index].answer) 
             {
-                console.log("right");
                 score++;
             }
-       }
+        }
     }
-clearInterval(id);
-Quiz(++index);
+
+
+    if (index == quizQuestions.length-1) 
+    {
+        
+        flag = true;
+        document.querySelector('.pre').style.visibility = "hidden";
+        document.querySelector('.next').style.visibility = "hidden";
+        if (Skip.length-1 > tempQuation) 
+        {
+            index = Skip[tempQuation];
+        }
+        else
+        {
+            Result();
+            return;
+        }
+        Quiz(index);
+        return;
+    }
+
+    if (flag) 
+    {
+        if (Skip.length-1 > tempQuation) 
+        {
+            tempQuation++;
+        }
+        else
+        {
+            Result();   
+            return;
+        }
+        index = Skip[tempQuation];
+        Quiz(index);
+        return;
+        
+    }
+
+    Quiz(++index);
 }
 
