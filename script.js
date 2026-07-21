@@ -219,6 +219,7 @@ function Result()
 
 
     let total = quizQuestions.length;
+    let Attempted = total;
     let correct = score;
     let wrong = total - correct;
     let percentage = ((correct / total) * 100).toFixed(0);
@@ -228,9 +229,11 @@ function Result()
     document.querySelector(".result").style.display = "block";
 
     document.querySelector(".result").innerHTML = `
-        <h1>Quiz Result</h1>
+        <h1>🏆 Quiz Result 🏆</h1>
 
         <p>📚 Total Questions : <b>${total}</b></p>
+
+        <p>✒️ Attempted Questions : <b>${Attempted}</b></p>
 
         <p>✅ Correct Answers : <b>${correct}</b></p>
 
@@ -238,11 +241,8 @@ function Result()
 
         <p>📊 Percentage : <b>${percentage}%</b></p>
 
-        <p style="font-size:28px;color:${percentage>=50?'#2ecc71':'#ff5e5e'}">
-            ${status}
-        </p>
+        <p><b> ${percentage >= 40? ' 🎉Pass' : '😔 Fail'} <b/></p>`
 
-        <button onclick="location.reload()">Restart Quiz</button>`;
         
 }
 
@@ -302,4 +302,3 @@ document.querySelector('form').onsubmit = function (e)
 
     Quiz(++index);
 }
-
