@@ -158,7 +158,7 @@ function Quiz(index)
     {
         document.querySelector('.pre').classList.add("no-cursor");
         document.querySelector('.pre').disabled = true;
-        Timer(1000, 1000);
+    
 
     }
 
@@ -174,9 +174,9 @@ function Quiz(index)
         document.querySelector('.pre').disabled = false;
         document.querySelector('.next').classList.remove("no-cursor")
         document.querySelector('.next').disabled = false;
-        Timer(1000, 1000);
+        
     }
-
+Timer(1000, 1000);
 
 
 
